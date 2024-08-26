@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/style.css">
+    <title>WeatherApps</title>
+</head>
+<body>
+    <div class="jumbotron d-flex justify-content-center align-items-center flex-column">
+        <h1>Weather Apps</h1>
+        <div class="card" action="/" style="width: 35rem;">
+            <form class="form" method="POST">
+                <div class="mb-6">
+                    <input type="text" id="disabledTextInput" name="city" class="form-control" placeholder="Enter City Name">
+                </div>
+                <button type="submit" class="btn btn-primary">Search</button>
+              </form>
+            <div class="card-body">
+                
+                <div class="header">
+                    <% if (locals.weatherMain === "Rain") { %>
+                        <img width="160px" src="images/rainy.png" alt="">
+                      <% } else if (locals.weatherMain === "Clouds") { %>
+                        <img width="160px" src="images/cloudy1.png" alt="">
+                      <% } else if (locals.weatherMain === "Clear"){ %>
+                        <img width="160px" src="images/sun.png" alt="">
+                      <% } else if (locals.weatherMain === "Strom"){%>
+                        <img width="160px" src="images/thunder.png" alt="">
+                      <% } else {%>
+                        <h3>Please Input Your City...</h3>
+                      <% }%>
+                      
+                    
+                    <div class="mb-6">
+                        <h1>
+                            <%= locals.deg %>
+                        </h1>
+                        <h4>
+                            <%= locals.weather %>
+                        </h4>
+                    </div>
+                    </div>       
+                <div class="footer">
+                    <% if(locals.city) {%>
+                        <h1><%= locals.city %></h1>
+                        <h5><%= new Date().toLocaleDateString("en-US", { day: "numeric", month: "long" }) %></h5>   
+                    <% } else {%>
+                        <h1><%= locals.errors %></h1>
+                    <% } %>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

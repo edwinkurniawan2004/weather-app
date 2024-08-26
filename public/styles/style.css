@@ -1,0 +1,76 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.jumbotron{
+    width: 100wh;
+    height: 100vh;
+}
+
+.card{
+    margin-top: 20px;
+    background: linear-gradient(145deg, #2aa4e6, #001678);
+    border: none;
+    box-shadow: 2px 2px 20px #36363a;
+    border-radius: 20px;
+}
+
+.form{
+    padding: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.form input{
+    text-align: center;
+    width: 350px;
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+.form button{
+    border-radius: 50px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    box-shadow: 1px 1px 5px black;
+}
+
+.form button:hover{
+    background-color: black;
+}
+
+.card-body{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header{
+    margin-bottom: 80px;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header div h4{
+    text-transform: uppercase;
+}
+
+.header h1{
+    font-size: 55px;
+    font-weight: bold;
+}
+
+.footer{
+    padding-bottom: 80px;
+    text-align: center;
+}
